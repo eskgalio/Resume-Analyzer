@@ -86,13 +86,3 @@ A modern, open-source, AI-powered web app that analyzes resumes, provides action
 5. Open a Pull Request
 
 ---
-
-## 📄 License
-
-MIT License. See [LICENSE](LICENSE) for details.
-
----
-
-## 🙋‍♂️ Contact
-
-For questions or support, open an issue or email [your.email@domain.com](mailto:your.email@domain.com). 
