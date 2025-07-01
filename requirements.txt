@@ -1,0 +1,9 @@
+Flask
+spacy
+scikit-learn
+PyPDF2
+fpdf
+gunicorn
+flask-login
+flask-admin
+flask-sqlalchemy 

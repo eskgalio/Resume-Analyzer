@@ -1,0 +1,5 @@
+{
+    "Data Scientist": {"skills": ["python", "machine learning", "data analysis", "pandas", "scikit-learn"]},
+    "Web Developer": {"skills": ["html", "css", "javascript", "flask", "django"]},
+    "Project Manager": {"skills": ["project management", "agile", "scrum", "leadership"]}
+} 

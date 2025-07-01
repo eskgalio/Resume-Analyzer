@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Analyzer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Resume Analyzer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/privacy">Privacy</a></li>
+                <li class="nav-item"><a class="nav-link" href="/terms">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<section class="hero-section py-5 bg-light text-center">
+    <div class="container">
+        <h1 class="display-5 fw-bold">AI-Powered Resume Analyzer</h1>
+        <p class="lead">Get instant feedback, job matching, and ATS compliance checks for your resume. 100% free and private.</p>
+    </div>
+</section>
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+            <div class="card p-4 shadow-sm">
+                <h2 class="mb-4 h4 text-center">Upload Your Resume</h2>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="resume" class="form-label">Resume (PDF or TXT):</label>
+                        <input class="form-control" type="file" id="resume" name="resume" required accept=".pdf,.txt">
+                    </div>
+                    <div class="mb-3">
+                        <label for="job_desc" class="form-label">Paste Job Description (optional):</label>
+                        <textarea class="form-control" id="job_desc" name="job_desc" rows="4" placeholder="Paste the job description here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Analyze</button>
+                </form>
+                <div id="spinner" class="spinner mt-3" style="display:none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Analyzing...</span>
+                    </div>
+                </div>
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <div class="alert alert-warning mt-3">
+                      {{ messages[0] }}
+                    </div>
+                  {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer mt-auto py-3">
+    <div class="container text-center">
+        <span class="navbar-text">&copy; 2024 Resume Analyzer &mdash; <a href="/privacy" class="text-decoration-underline text-light">Privacy</a> | <a href="/terms" class="text-decoration-underline text-light">Terms</a></span>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.querySelector('form').onsubmit = function() {
+        document.getElementById('spinner').style.display = 'flex';
+    };
+</script>
+</body>
+</html> 
