@@ -21,13 +21,6 @@ A modern, open-source, AI-powered web app that analyzes resumes, provides action
 
 ---
 
-## 🖥️ Screenshots
-
-![Home Page](screenshots/home.png)
-![Analysis Result](screenshots/result.png)
-
----
-
 ## 🛠️ Tech Stack
 - Python 3.8+
 - Flask
